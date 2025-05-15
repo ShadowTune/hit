@@ -1,0 +1,64 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\geometry{a4paper, margin=1in}
+
+% Configuring document structure
+\title{Technical Guide for EduPath Career Tools}
+\author{EduPath Development Team}
+\date{May 15, 2025}
+
+\begin{document}
+
+\maketitle
+
+\section*{Overview}
+Detailing the technical architecture of the EduPath Career Tools platform.
+
+\section{System Architecture}
+Describing a client-side HTML/CSS/JavaScript application stored in localStorage.
+
+\subsection{HTML Structure}
+Utilizing semantic HTML5 elements (e.g., <header>, <main>, <section>) for accessibility.
+
+\subsection{CSS Styling}
+Applying responsive design with Flexbox and Grid, styled in career.css and calendar.css.
+
+\subsection{JavaScript Logic}
+Managing interactivity in career.js, skills.js, and notifications.js, using localStorage for data persistence.
+
+\section{Key Features}
+Implementing Job Matching, Resume Builder, Calendar, Notifications, and Accessibility.
+
+\subsection{Data Storage}
+Using localStorage with CLOUD_STORAGE_KEY "eduPathCareer" and "eduPathSkills".
+
+\subsection{Event Handling}
+Employing addEventListener for user interactions (e.g., button clicks, form submissions).
+
+\section{Security Audit}
+Conducting a simulated audit on May 15, 2025, at 06:10 PM +06.
+
+\subsection{Identified Vulnerabilities}
+\begin{itemize}
+  \item \textbf{XSS Risk}: User input (e.g., resume-name) is directly inserted into HTML without sanitization.
+  \item \textbf{LocalStorage Exposure}: Sensitive data (e.g., resume details) stored in plain text.
+  \item \textbf{CSRF Risk}: No token validation for form submissions.
+\end{itemize}
+
+\subsection{Recommended Fixes}
+\begin{itemize}
+  \item Sanitize all user inputs using DOMPurify or similar libraries.
+  \item Encrypt localStorage data with a client-side encryption library.
+  \item Implement CSRF tokens for form submissions (server-side required).
+\end{itemize}
+
+\section{Deployment}
+Hosting on a static server with HTTPS for security.
+
+\end{document}

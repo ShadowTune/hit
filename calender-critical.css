@@ -1,0 +1,15 @@
+.calendar-container,
+.schedule-form,
+.deadline-adjustment,
+.reminder-settings,
+.notification-settings,
+.engagement-stats {
+    display: grid;
+    gap: 1.5rem
+}
+
+.calendar-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px
+}

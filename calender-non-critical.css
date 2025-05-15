@@ -1,0 +1,80 @@
+#calendar {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    min-height: 200px
+}
+
+.schedule-form h3,
+.deadline-adjustment h3,
+.reminder-settings h3,
+.notification-settings h3,
+.engagement-stats h3 {
+    font-size: 1.2rem;
+    color: #1a4284;
+    margin-bottom: .5rem
+}
+
+.schedule-form input,
+.deadline-adjustment input,
+.reminder-settings select,
+.notification-settings label {
+    width: 100%;
+    padding: .75rem;
+    margin-bottom: .5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem
+}
+
+.schedule-form button,
+.deadline-adjustment button,
+.reminder-settings button {
+    background: #2e5fb2;
+    color: #fff;
+    padding: .75rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem
+}
+
+.schedule-form button:hover,
+.deadline-adjustment button:hover,
+.reminder-settings button:hover {
+    background: #1a4284
+}
+
+.calendar-event {
+    padding: .5rem;
+    margin: .25rem 0;
+    background: #e9f5e9;
+    border-radius: 4px
+}
+
+.calendar-event.deadline {
+    background: #ffebee
+}
+
+.reminder-notification {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background: #ff7043;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+    display: none;
+    z-index: 1000
+}
+
+.notification-settings label {
+    display: block
+}
+
+.engagement-stats p {
+    font-size: 1rem;
+    color: #555
+}

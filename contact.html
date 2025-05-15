@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – EduPath</title>
+  <link rel="stylesheet" href="contact.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="main-nav" aria-label="Main navigation">
+      <div class="logo">
+        <a href="index.html" aria-label="EduPath Home">
+          <i class="fas fa-graduation-cap"></i> EduPath
+        </a>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" class="container">
+    <section class="contact-hero">
+      <h1>Get in Touch with EduPath</h1>
+      <p>We're here to answer your questions and guide your learning journey.</p>
+    </section>
+
+    <section class="contact-cards" aria-label="Contact Information">
+      <div class="card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Visit Us</h3>
+        <p>123 Learning Lane, Knowledge City, NT 4000</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-phone-alt"></i>
+        <h3>Call Us</h3>
+        <p>+61 7 1234 5678</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-envelope"></i>
+        <h3>Email Us</h3>
+        <p>info@edupath.edu.au</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-share-alt"></i>
+        <h3>Follow Us</h3>
+        <p>@EduPath on all platforms</p>
+      </div>
+    </section>
+
+    <section class="contact-form-section" aria-labelledby="form-heading">
+      <h2 id="form-heading">Contact Form</h2>
+      <form id="contact-form" novalidate>
+        <div class="form-group">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" required aria-required="true" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" required aria-required="true" />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" />
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message:</label>
+          <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+        </div>
+
+        <div class="form-group checkbox">
+          <input type="checkbox" id="consent" name="consent" required aria-required="true" />
+          <label for="consent">I agree to the <a href="#">privacy policy</a>.</label>
+        </div>
+
+        <button type="submit" class="submit-btn" aria-label="Submit Contact Form">Send Message</button>
+      </form>
+
+      <div id="form-feedback" role="status" aria-live="polite" class="sr-only"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 EduPath. All rights reserved.</p>
+  </footer>
+
+  <script src="contact.js" defer></script>
+</body>
+</html>

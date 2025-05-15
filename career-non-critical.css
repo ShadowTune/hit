@@ -1,0 +1,263 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f7fa;
+    color: #333
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 2rem
+}
+
+.site-header {
+    background: #2e5fb2;
+    color: #fff;
+    padding: 1rem 2rem
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.logo a {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem
+}
+
+.nav-menu li a {
+    color: #fff;
+    font-weight: 500;
+    padding: .5rem;
+    text-decoration: none
+}
+
+.nav-menu li a:hover,
+.nav-menu li[aria-current=page] {
+    color: #46ceb3
+}
+
+.hero {
+    padding: 3rem 0 2rem
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1a4284
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: #555
+}
+
+.resource-card h3 {
+    font-size: 1.3rem;
+    color: #1a4284;
+    margin-bottom: .5rem
+}
+
+.resource-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem
+}
+
+.resource-card button {
+    background: #2e5fb2;
+    color: #fff;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600
+}
+
+.resource-card button:hover {
+    background: #1a4284
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column
+}
+
+.filter-group label {
+    font-weight: 600;
+    margin-bottom: .4rem
+}
+
+.job-filters select {
+    padding: .5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem
+}
+
+.job-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+}
+
+.job-item h3 {
+    font-size: 1.1rem;
+    color: #2e5fb2;
+    margin-bottom: .5rem
+}
+
+.job-item p {
+    font-size: .9rem;
+    color: #555
+}
+
+.resume-template,
+.resume-input {
+    margin-bottom: 1rem
+}
+
+.resume-template label,
+.resume-input label {
+    font-weight: 600;
+    margin-bottom: .4rem;
+    display: block
+}
+
+.resume-template select,
+.resume-input input,
+.resume-input textarea {
+    width: 100%;
+    padding: .75rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem
+}
+
+.resume-input textarea {
+    height: 100px;
+    resize: vertical
+}
+
+.resume-input button {
+    background: #2e5fb2;
+    color: #fff;
+    padding: .75rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem
+}
+
+.resume-input button:hover {
+    background: #1a4284
+}
+
+.partner-logos {
+    justify-content: center
+}
+
+.partner-logos button {
+    background: none;
+    border: none;
+    padding: 0
+}
+
+.partner-logos img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px
+}
+
+.partner-logos button:hover img {
+    transform: scale(1.05)
+}
+
+.gamification-content {
+    text-align: center
+}
+
+.gamification-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem
+}
+
+.badges {
+    display: flex;
+    gap: 1rem;
+    justify-content: center
+}
+
+.badge {
+    background: #46ceb3;
+    color: #fff;
+    padding: .5rem 1rem;
+    border-radius: 20px;
+    font-size: .9rem
+}
+
+.skill-dashboard {
+    margin-top: 1rem
+}
+
+.generate-btn {
+    background: #2e5fb2;
+    color: #fff;
+    padding: .75rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem
+}
+
+.generate-btn:hover {
+    background: #1a4284
+}
+
+.site-footer {
+    background: #1a4284;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem
+}
+
+:root {
+    --primary-color: #2e5fb2;
+    --hover-color: #1a4284;
+    --highlight-color: #46ceb3;
+    --text-color: #333;
+    --section-bg: #f8f9fa
+}
+
+p,
+h1,
+h2,
+h3,
+label,
+span {
+    color: var(--text-color)
+}
+
+button {
+    background-color: var(--primary-color);
+    color: #fff
+}
+
+button:hover {
+    background-color: var(--hover-color)
+}

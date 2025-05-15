@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduPath - Career Tools</title>
+  <!-- Critical CSS inline for above-the-fold content -->
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+    }
+    .site-header {
+      background-color: #2e5fb2;
+      color: white;
+      padding: 1rem 2rem;
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 0 2rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #1a4284;
+    }
+    button:focus,
+    a:focus,
+    select:focus,
+    input:focus,
+    textarea:focus {
+      outline: 3px solid #46ceb3;
+      outline-offset: 2px;
+    }
+  </style>
+  <link rel="stylesheet" href="career-critical.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="calendar-critical.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="career-non-critical.css" media="print" onload="this.media='all'" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="main-nav" aria-label="Main navigation">
+        <div class="logo">
+          <a href="index.html" aria-label="EduPath Home">
+            <i class="fas fa-graduation-cap" aria-hidden="true"></i> EduPath
+          </a>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="career.html" aria-current="page">Career Tools</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <h1 id="hero-heading">Career Tools</h1>
+        <p>Enhance your career with resources, job opportunities, and professional tools.</p>
+      </div>
+    </section>
+
+    <section class="career-resource-center section" aria-labelledby="resource-heading">
+      <h2 id="resource-heading" class="section-title">Career Resource Center</h2>
+      <p class="section-description">Access tools and resources to guide your career journey.</p>
+      <div class="resource-container">
+        <div class="resource-card">
+          <h3>Career Guides</h3>
+          <p>Download PDFs with tips on job searching, interview skills, and career planning.</p>
+          <button onclick="import('./career.js').then(module => module.openResource('guides'))" aria-label="View Career Guides">View Guides</button>
+        </div>
+        <div class="resource-card">
+          <h3>Skill Assessments</h3>
+          <p>Test your skills and get personalized career recommendations.</p>
+          <button id="start-assessment" onclick="import('./skills.js').then(module => module.openAssessment())" aria-label="Take Skill Assessment">Take Assessment</button>
+        </div>
+        <div class="resource-card">
+          <h3>Interview Tips</h3>
+          <p>Watch videos and read articles to ace your next interview.</p>
+          <button onclick="import('./career.js').then(module => module.openResource('tips'))" aria-label="View Interview Tips">View Tips</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="job-matching section" aria-labelledby="job-match-heading">
+      <h2 id="job-match-heading" class="section-title">Job Matching</h2>
+      <p class="section-description">Find jobs tailored to your skills and course progress.</p>
+      <div class="job-filters">
+        <div class="filter-group">
+          <label for="job-category">Category:</label>
+          <select id="job-category" name="job-category" aria-label="Select job category">
+            <option value="all">All</option>
+            <option value="web">Web Development</option>
+            <option value="data">Data Science</option>
+            <option value="design">Design</option>
+            <option value="marketing">Marketing</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="job-level">Level:</label>
+          <select id="job-level" name="job-level" aria-label="Select job level">
+            <option value="all">All</option>
+            <option value="entry">Entry</option>
+            <option value="mid">Mid</option>
+            <option value="senior">Senior</option>
+          </select>
+        </div>
+        <button id="search-jobs" class="clear-btn" aria-label="Search jobs">Search Jobs</button>
+      </div>
+      <div class="job-list" id="job-list" aria-live="polite">
+        <!-- Jobs will be populated by JavaScript -->
+      </div>
+    </section>
+
+    <section class="resume-builder section" aria-labelledby="resume-heading">
+      <h2 id="resume-heading" class="section-title">Resume Builder</h2>
+      <p class="section-description">Create a professional resume tailored to your skills.</p>
+      <div class="resume-tool">
+        <div class="resume-template">
+          <label for="template-select">Choose Template:</label>
+          <select id="template-select" name="template-select" aria-label="Select resume template">
+            <option value="modern">Modern</option>
+            <option value="classic">Classic</option>
+            <option value="creative">Creative</option>
+          </select>
+        </div>
+        <div class="resume-input">
+          <label for="resume-name">Full Name:</label>
+          <input type="text" id="resume-name" name="resume-name" placeholder="Your Name" aria-required="true">
+          <label for="resume-email">Email:</label>
+          <input type="email" id="resume-email" name="resume-email" placeholder="your.email@example.com" aria-required="true">
+          <label for="resume-skills">Skills:</label>
+          <textarea id="resume-skills" name="resume-skills" placeholder="List your skills (e.g., HTML, CSS, JavaScript)" aria-required="true"></textarea>
+          <button onclick="import('./resumeBuilder.js').then(module => module.generateResume())" aria-label="Generate resume">Generate Resume</button>
+        </div>
+        <div class="resume-preview" id="resume-preview" aria-live="polite">
+          <!-- Resume will be populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <section class="industry-partners section" aria-labelledby="partners-heading">
+      <h2 id="partners-heading" class="section-title">Industry Partner Connections</h2>
+      <p class="section-description">Connect with leading industry partners for opportunities.</p>
+      <div class="partner-logos">
+        <button onclick="import('./career.js').then(module => module.connectPartner('Partner1'))" aria-label="Connect with Partner 1">
+          <img src="https://via.placeholder.com/100?text=Partner1" alt="Partner 1 Logo" loading="lazy">
+        </button>
+        <button onclick="import('./career.js').then(module => module.connectPartner('Partner2'))" aria-label="Connect with Partner 2">
+          <img src="https://via.placeholder.com/100?text=Partner2" alt="Partner 2 Logo" loading="lazy">
+        </button>
+        <button onclick="import('./career.js').then(module => module.connectPartner('Partner3'))" aria-label="Connect with Partner 3">
+          <img src="https://via.placeholder.com/100?text=Partner3" alt="Partner 3 Logo" loading="lazy">
+        </button>
+      </div>
+    </section>
+
+    <section class="gamification-section section" aria-labelledby="gamification-heading">
+      <h2 id="gamification-heading" class="section-title">Gamification</h2>
+      <p class="section-description">Earn points and badges as you use career tools!</p>
+      <div class="gamification-content">
+        <p>Points: <span id="user-points" aria-live="polite">0</span></p>
+        <div class="badges" aria-label="Earned badges">
+          <span id="career-explorer" class="badge" style="display: none;" role="status">Career Explorer</span>
+          <span id="resume-creator" class="badge" style="display: none;" role="status">Resume Creator</span>
+          <span id="job-finder" class="badge" style="display: none;" role="status">Job Finder</span>
+          <span id="partner-connector" class="badge" style="display: none;" role="status">Partner Connector</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill-dashboard-section section" aria-labelledby="skill-dashboard-heading">
+      <h2 id="skill-dashboard-heading" class="section-title">Skill Dashboard</h2>
+      <p class="section-description">Track and improve your skills with our dashboard.</p>
+      <button id="start-assessment-btn" class="generate-btn" aria-label="Start skill assessment">Start Skill Assessment</button>
+      <div id="skill-dashboard" class="skill-dashboard" aria-live="polite"></div>
+      <div id="skill-recommendations" aria-live="polite"></div>
+    </section>
+
+    <section class="calendar-section section" aria-labelledby="calendar-heading">
+      <h2 id="calendar-heading" class="section-title">Career Calendar</h2>
+      <p class="section-description">Manage your career tasks and deadlines with our calendar.</p>
+      <div class="calendar-container">
+        <div id="calendar" aria-live="polite"></div>
+        <div class="schedule-form">
+          <h3 id="schedule-form-heading">Schedule a Task</h3>
+          <label for="task-name">Task Name:</label>
+          <input type="text" id="task-name" placeholder="Task Name" aria-required="true">
+          <label for="task-date">Date:</label>
+          <input type="date" id="task-date" aria-required="true">
+          <label for="task-time">Time:</label>
+          <input type="time" id="task-time" aria-required="true">
+          <button onclick="import('./calendar.js').then(module => module.scheduleTask())" aria-label="Add task to schedule">Add Task</button>
+        </div>
+        <div class="deadline-adjustment">
+          <h3 id="deadline-adjust-heading">Adjust Deadlines</h3>
+          <label for="task-select">Select Task:</label>
+          <select id="task-select" aria-label="Select task to adjust deadline"></select>
+          <label for="new-deadline">New Deadline:</label>
+          <input type="date" id="new-deadline" aria-required="true">
+          <button onclick="import('./calendar.js').then(module => module.adjustDeadline())" aria-label="Update task deadline">Update Deadline</button>
+        </div>
+        <div class="reminder-settings">
+          <h3 id="reminder-settings-heading">Set Reminders</h3>
+          <label for="reminder-task">Select Task:</label>
+          <select id="reminder-task" aria-label="Select task for reminder">
+            <option value="">Select Task</option>
+          </select>
+          <label for="reminder-interval">Reminder Interval:</label>
+          <select id="reminder-interval" aria-label="Select reminder interval">
+            <option value="15">15 minutes</option>
+            <option value="30">30 minutes</option>
+            <option value="60">1 hour</option>
+            <option value="1440">1 day</option>
+          </select>
+          <button onclick="import('./notifications.js').then(module => module.setReminder())" aria-label="Set reminder for selected task">Set Reminder</button>
+        </div>
+        <div class="notification-settings">
+          <h3 id="notification-settings-heading">Notification Preferences</h3>
+          <label><input type="checkbox" id="browser-notifications" onclick="import('./notifications.js').then(module => module.toggleBrowserNotifications())" aria-label="Enable browser notifications"> Enable Browser Notifications</label>
+          <label><input type="checkbox" id="email-reminders" onclick="import('./notifications.js').then(module => module.toggleEmailReminders())" aria-label="Enable email reminders"> Enable Email Reminders</label>
+        </div>
+        <div class="engagement-stats" aria-label="Engagement statistics">
+          <h3>Engagement Stats</h3>
+          <p>Notification Click-Through Rate: <span id="ctr" aria-live="polite">0%</span></p>
+          <p>Tasks Completed After Notification: <span id="task-completion" aria-live="polite">0</span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 EduPath. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div id="feedback-message" aria-live="polite" role="alert"></div>
+  <div id="performance-message" aria-live="polite" role="status"></div>
+  <script src="career-core.js" defer></script>
+  <script src="analytics.js" async></script>
+  <script>
+    // Performance Testing
+    window.addEventListener('load', () => {
+      const loadTime = performance.now();
+      document.getElementById('performance-message').textContent = `Page loaded in ${loadTime.toFixed(2)}ms`;
+    });
+  </script>
+</body>
+</html>
