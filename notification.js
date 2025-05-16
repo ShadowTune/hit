@@ -1,3 +1,4 @@
+// Wasi Anower (S381758)
 export function toggleBrowserNotifications() {
   import('./career-core.js').then(module => module.trackEvent("Notifications", "Toggle", "Browser Notifications"));
   const checkbox = document.getElementById("browser-notifications");

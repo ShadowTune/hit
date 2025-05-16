@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EduPath - Home</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+  <style>
+    /* Minimal CSS to hide filtered out cards */
+    .hidden {
+      display: none !important;
+    }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  
+
   <header class="site-header">
     <div class="container">
       <nav class="main-nav">
         <div class="logo">
           <a href="./index.html" aria-label="EduPath Home">
-            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-            EduPath
+            <i class="fas fa-graduation-cap" aria-hidden="true"></i> EduPath
           </a>
         </div>
         <button class="menu-toggle" aria-expanded="false" aria-controls="nav-menu">
@@ -37,16 +45,29 @@
     <section class="hero">
       <div class="container">
         <h1>Welcome to EduPath</h1>
-        <p>Discover quality learning modules designed to help you succeed in your educational journey.</p>
+        <p>
+          Discover quality learning modules designed to help you succeed in your
+          educational journey.
+        </p>
         <div class="search-container">
-          <form role="search">
-            <input type="search" placeholder="Search courses" aria-label="Search for courses">
+          <form role="search" id="search-form">
+            <input
+              type="search"
+              id="search-input"
+              placeholder="Search courses"
+              aria-label="Search for courses"
+              autocomplete="off"
+            />
             <button type="submit" aria-label="Search">
               <i class="fas fa-search" aria-hidden="true"></i>
             </button>
           </form>
         </div>
-        <div id="continue-learning" class="continue-learning" style="display: none; margin-top: 1rem;">
+        <div
+          id="continue-learning"
+          class="continue-learning"
+          style="display: none; margin-top: 1rem"
+        >
           <p>Continue learning: <a id="continue-link" href="#"></a></p>
         </div>
       </div>
@@ -55,7 +76,9 @@
     <section class="featured-section">
       <div class="container">
         <h2 class="section-title">Featured Learning Modules</h2>
-        <p class="section-description">Browse our most popular courses and start your learning journey today.</p>
+        <p class="section-description">
+          Browse our most popular courses and start your learning journey today.
+        </p>
         <div class="filter-container">
           <label for="duration-filter">Filter by Duration:</label>
           <select id="duration-filter" aria-label="Filter courses by duration">
@@ -66,11 +89,15 @@
           </select>
         </div>
         <div class="card-section">
-          <article class="card" data-course="Web Development Fundamentals" data-duration="8">
+          <article
+            class="card"
+            data-course="Web Development Fundamentals"
+            data-duration="8"
+          >
             <div class="card-img">
-              <img src="images/web_dev_course.png" alt="Web Development Fundamentals">
+              <img src="images/web_dev_course.png" alt="Web Development Fundamentals" />
               <span class="tag">Beginner</span>
-              <span class="last-viewed" style="display: none;">Last Viewed</span>
+              <span class="last-viewed" style="display: none">Last Viewed</span>
             </div>
             <div class="card-content">
               <header>
@@ -84,30 +111,54 @@
                 </ul>
               </section>
               <footer>
-                <button class="learn-more" onclick="learnMore('Web Development Fundamentals')">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                <button
+                  class="learn-more"
+                  onclick="learnMore('Web Development Fundamentals')"
+                >
+                  Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </button>
               </footer>
               <section class="project-section">
                 <h4>Course Project: Build a Personal Portfolio Website</h4>
-                <p><strong>Instructions:</strong> Create a personal portfolio website using HTML and CSS. Include at least 3 sections (e.g., About, Projects, Contact). Submit a URL or code snippet.</p>
-                <form class="project-submission" onsubmit="submitProject(event, 'Web Development Fundamentals')">
+                <p>
+                  <strong>Instructions:</strong> Create a personal portfolio website
+                  using HTML and CSS. Include at least 3 sections (e.g., About,
+                  Projects, Contact). Submit a URL or code snippet.
+                </p>
+                <form
+                  class="project-submission"
+                  onsubmit="submitProject(event, 'Web Development Fundamentals')"
+                >
                   <label for="submission-web-dev">Your Submission:</label>
-                  <textarea id="submission-web-dev" name="submission" placeholder="Paste your project URL or code snippet" required></textarea>
+                  <textarea
+                    id="submission-web-dev"
+                    name="submission"
+                    placeholder="Paste your project URL or code snippet"
+                    required
+                  ></textarea>
                   <button type="submit">Submit Project</button>
                 </form>
                 <div class="submission-list" id="submissions-web-dev"></div>
                 <div class="peer-reviews">
                   <h5>Peer Reviews</h5>
-                  <button onclick="viewPeerReviews('Web Development Fundamentals')">View Peer Submissions</button>
+                  <button onclick="viewPeerReviews('Web Development Fundamentals')">
+                    View Peer Submissions
+                  </button>
                   <div class="peer-review-list" id="peer-reviews-web-dev"></div>
                 </div>
               </section>
             </div>
           </article>
-          <article class="card" data-course="Data Science Essentials" data-duration="10">
+
+          <article
+            class="card"
+            data-course="Data Science Essentials"
+            data-duration="10"
+          >
             <div class="card-img">
-              <img src="images/data_science_course.png" alt="Data Science Essentials">
+              <img src="images/data_science_course.png" alt="Data Science Essentials" />
               <span class="tag">Intermediate</span>
-              <span class="last-viewed" style="display: none;">Last Viewed</span>
+              <span class="last-viewed" style="display: none">Last Viewed</span>
             </div>
             <div class="card-content">
               <header>
@@ -121,30 +172,57 @@
                 </ul>
               </section>
               <footer>
-                <button class="learn-more" onclick="learnMore('Data Science Essentials')">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                <button
+                  class="learn-more"
+                  onclick="learnMore('Data Science Essentials')"
+                >
+                  Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </button>
               </footer>
               <section class="project-section">
                 <h4>Course Project: Analyze a Dataset</h4>
-                <p><strong>Instructions:</strong> Use Python to analyze a dataset of your choice. Create visualizations and summarize findings. Submit a URL to your notebook or code snippet.</p>
-                <form class="project-submission" onsubmit="submitProject(event, 'Data Science Essentials')">
+                <p>
+                  <strong>Instructions:</strong> Use Python to analyze a dataset of
+                  your choice. Create visualizations and summarize findings. Submit a
+                  URL to your notebook or code snippet.
+                </p>
+                <form
+                  class="project-submission"
+                  onsubmit="submitProject(event, 'Data Science Essentials')"
+                >
                   <label for="submission-data-science">Your Submission:</label>
-                  <textarea id="submission-data-science" name="submission" placeholder="Paste your project URL or code snippet" required></textarea>
+                  <textarea
+                    id="submission-data-science"
+                    name="submission"
+                    placeholder="Paste your project URL or code snippet"
+                    required
+                  ></textarea>
                   <button type="submit">Submit Project</button>
                 </form>
                 <div class="submission-list" id="submissions-data-science"></div>
                 <div class="peer-reviews">
                   <h5>Peer Reviews</h5>
-                  <button onclick="viewPeerReviews('Data Science Essentials')">View Peer Submissions</button>
+                  <button onclick="viewPeerReviews('Data Science Essentials')">
+                    View Peer Submissions
+                  </button>
                   <div class="peer-review-list" id="peer-reviews-data-science"></div>
                 </div>
               </section>
             </div>
           </article>
-          <article class="card" data-course="Digital Marketing Strategies" data-duration="6">
+
+          <article
+            class="card"
+            data-course="Digital Marketing Strategies"
+            data-duration="6"
+          >
             <div class="card-img">
-              <img src="images/digital_marketing_course.png" alt="Digital Marketing Strategies">
+              <img
+                src="images/digital_marketing_course.png"
+                alt="Digital Marketing Strategies"
+              />
               <span class="tag">All Levels</span>
-              <span class="last-viewed" style="display: none;">Last Viewed</span>
+              <span class="last-viewed" style="display: none">Last Viewed</span>
             </div>
             <div class="card-content">
               <header>
@@ -158,20 +236,39 @@
                 </ul>
               </section>
               <footer>
-                <button class="learn-more" onclick="learnMore('Digital Marketing Strategies')">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                <button
+                  class="learn-more"
+                  onclick="learnMore('Digital Marketing Strategies')"
+                >
+                  Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </button>
               </footer>
               <section class="project-section">
                 <h4>Course Project: Create a Social Media Campaign</h4>
-                <p><strong>Instructions:</strong> Design a social media campaign for a fictional brand. Include a plan with 3 posts and metrics for success. Submit a URL to your plan or text description.</p>
-                <form class="project-submission" onsubmit="submitProject(event, 'Digital Marketing Strategies')">
+                <p>
+                  <strong>Instructions:</strong> Design a social media campaign for a
+                  fictional brand. Include a plan with 3 posts and metrics for
+                  success. Submit a URL to your plan or text description.
+                </p>
+                <form
+                  class="project-submission"
+                  onsubmit="submitProject(event, 'Digital Marketing Strategies')"
+                >
                   <label for="submission-digital-marketing">Your Submission:</label>
-                  <textarea id="submission-digital-marketing" name="submission" placeholder="Paste your project URL or text description" required></textarea>
+                  <textarea
+                    id="submission-digital-marketing"
+                    name="submission"
+                    placeholder="Paste your project URL or text description"
+                    required
+                  ></textarea>
                   <button type="submit">Submit Project</button>
                 </form>
                 <div class="submission-list" id="submissions-digital-marketing"></div>
                 <div class="peer-reviews">
                   <h5>Peer Reviews</h5>
-                  <button onclick="viewPeerReviews('Digital Marketing Strategies')">View Peer Submissions</button>
+                  <button onclick="viewPeerReviews('Digital Marketing Strategies')">
+                    View Peer Submissions
+                  </button>
                   <div class="peer-review-list" id="peer-reviews-digital-marketing"></div>
                 </div>
               </section>

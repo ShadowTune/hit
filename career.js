@@ -1,3 +1,5 @@
+//Fahim Abdullah
+
 // Simulating DOMPurify for XSS mitigation (replace with actual library in production)
 const sanitizeInput = (input) => {
   const div = document.createElement('div');
@@ -311,6 +313,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   // Flexible Reminder System with Inline Validation
+  // Fahim Abdullah
   window.setReminder = function () {
     trackEvent("Notifications", "Set", "Reminder Added");
     const reminderTask = document.getElementById("reminder-task");
@@ -325,7 +328,6 @@ document.addEventListener("DOMContentLoaded", function () {
       element.setCustomValidity('');
       return true;
     };
-
     if (validateField(reminderTask, "Please select a task.") &&
         validateField(reminderInterval, "Please select a reminder interval.")) {
       const task = reminderTask.value;
@@ -437,7 +439,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     saveToCloud(data);
   };
-
+  // Fahim Abdullah
   // Initialize Engagement Stats
   const initEngagementStats = () => {
     const data = loadFromCloud();

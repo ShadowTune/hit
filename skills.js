@@ -1,3 +1,5 @@
+//Samia Akter (S365004)
+
 document.addEventListener("DOMContentLoaded", function () {
   // Device Detection
   const detectDevice = () => {
