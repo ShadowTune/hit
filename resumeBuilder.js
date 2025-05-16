@@ -1,3 +1,4 @@
+// Sayem Alvi (S371489)
 export function generateResume() {
   import('./career-core.js').then(module => module.trackEvent("Resume Builder", "Generate", "Resume Created"));
   const name = document.getElementById("resume-name").value.trim();
