@@ -1,3 +1,4 @@
+/* Privacy Policy Page Styles */
 
 /* Base Reset */
 * {
@@ -277,3 +278,55 @@
 .site-footer a:hover {
   color: var(--secondary-color);
 }
+
+
+.privacy-policy {
+  padding: 2rem 1rem;
+  background-color: var(--light-bg);
+  color: var(--dark-text);
+}
+
+.privacy-policy h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
+  text-align: center;
+}
+
+.privacy-policy p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.privacy-policy a {
+  color: var(--primary-color);
+  font-weight: 500;
+  text-decoration: underline;
+  transition: var(--transition);
+}
+
+.privacy-policy a:hover {
+  color: var(--secondary-color);
+}
+
+/* Optional: Add border or background to visually segment the section */
+.privacy-policy .container {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.site-footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--secondary-color);
+}
+

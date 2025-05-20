@@ -3,7 +3,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.querySelector('input[type="search"]');
   const courseCards = document.querySelectorAll('.card');
 
-  // index.js
+  // List of freeCodeCamp course URLs for random selection
+  const freeCodeCampLinks = [
+    "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
+    "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/",
+    "https://www.freecodecamp.org/learn/data-analysis-with-python/",
+    "https://www.freecodecamp.org/learn/scientific-computing-with-python/",
+    "https://www.freecodecamp.org/learn/front-end-development-libraries/",
+    "https://www.freecodecamp.org/learn/back-end-development-and-apis/",
+    "https://www.freecodecamp.org/learn/quality-assurance/",
+    "https://www.freecodecamp.org/learn/information-security/"
+  ];
+
+  // Function to get a random freeCodeCamp link
+  function getRandomFreeCodeCampLink() {
+    const randomIndex = Math.floor(Math.random() * freeCodeCampLinks.length);
+    return freeCodeCampLinks[randomIndex];
+  }
 
   // DOM elements
   const searchForm = document.getElementById("search-form");
@@ -40,20 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Dummy placeholders for your other functions, define as needed
-  function learnMore(courseName) {
-    alert(`Learn more about "${courseName}" - feature coming soon!`);
-  }
-
-  function submitProject(event, courseName) {
-    event.preventDefault();
-    alert(`Project submitted for "${courseName}" - feature coming soon!`);
-  }
-
-  function viewPeerReviews(courseName) {
-    alert(`Viewing peer reviews for "${courseName}" - feature coming soon!`);
-  }
-
   // Run filtering on page load
   filterCourses();
 
@@ -74,8 +76,29 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function learnMore(courseName) {
+  // Store the last course in localStorage
   localStorage.setItem('lastCourse', courseName);
-  alert(`You clicked Learn More for ${courseName}. This can be redirected to a course detail page.`);
+
+  // List of freeCodeCamp course URLs for random selection
+  const freeCodeCampLinks = [
+    "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
+    "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/",
+    "https://www.freecodecamp.org/learn/data-analysis-with-python/",
+    "https://www.freecodecamp.org/learn/scientific-computing-with-python/",
+    "https://www.freecodecamp.org/learn/front-end-development-libraries/",
+    "https://www.freecodecamp.org/learn/back-end-development-and-apis/",
+    "https://www.freecodecamp.org/learn/quality-assurance/",
+    "https://www.freecodecamp.org/learn/information-security/"
+  ];
+
+  // Function to get a random freeCodeCamp link
+  function getRandomFreeCodeCampLink() {
+    const randomIndex = Math.floor(Math.random() * freeCodeCampLinks.length);
+    return freeCodeCampLinks[randomIndex];
+  }
+
+  // Redirect to a random freeCodeCamp link
+  window.location.href = getRandomFreeCodeCampLink();
 }
 
 function submitProject(event, courseName) {

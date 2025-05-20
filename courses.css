@@ -25,6 +25,13 @@ body {
     line-height: 1.6;
     background-color: var(--light-bg);
     color: var(--dark-text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
 }
 
 a {
@@ -182,7 +189,7 @@ a {
 }
 
 /* Job Matching Feature */
-.job-matching .job-filters {
+.job-match .job-filters {
     display: flex;
     gap: 1rem;
     align-items: center;
@@ -930,6 +937,33 @@ progress::-moz-progress-bar {
     border-radius: var(--border-radius);
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem;
+    flex-shrink: 0;
+}
+
+.site-footer a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: var(--secondary-color);
+}
+
+.site-footer .footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
 }
 
 /* Responsive Design */

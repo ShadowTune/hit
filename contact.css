@@ -1,198 +1,313 @@
+/* Base Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Root Variables */
+:root {
+    --primary-color: #2e5fb2;
+    --primary-dark: #1a4284;
+    --secondary-color: #46ceb3;
+    --secondary-dark: #379f91;
+    --accent-color: #ff7043;
+    --dark-text: #333;
+    --light-text: #555;
+    --white: #fff;
+    --light-bg: #f5f7fa;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+}
 
 /* Base Styles */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f5f7fa;
-  color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
+    display: flex; /* Aligned with index.css */
+    flex-direction: column; /* Aligned with index.css */
+    min-height: 100vh; /* Aligned with index.css */
+}
+
+main {
+    flex: 1 0 auto; /* Aligned with index.css */
+    padding-bottom: 4rem; /* Retained to prevent footer overlap */
 }
 
 a {
-  color: #2e5fb2;
-  text-decoration: none;
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
+}
+
+.site-footer a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: var(--secondary-color);
 }
 
 .container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 2rem;
+    max-width: 1200px; /* Updated to match index.css */
+    margin: 0 auto;
+    padding: 0 1rem; /* Updated to match index.css */
 }
 
 /* Skip Link */
 .skip-link {
-  position: absolute;
-  left: -999px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 8px;
+    z-index: 1000;
+    transition: top 0.3s;
 }
 
 .skip-link:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  z-index: 1000;
-  background: #2e5fb2;
-  color: white;
-  padding: 1rem;
+    top: 0;
 }
 
 /* Header */
 .site-header {
-  background-color: #2e5fb2;
-  color: white;
-  padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    padding: 1rem 0;
+    color: var(--white);
 }
 
+/* Main Navigation */
 .main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Updated to match index.css */
+    margin: 0 auto;
+    padding: 0 1rem; /* Updated to match index.css */
 }
 
 .logo a {
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
+    list-style: none;
+    display: flex;
+    gap: 0.5rem; /* Reduced from 1rem to bring links closer */
 }
 
 .nav-menu li a {
-  color: white;
-  font-weight: 500;
-  padding: 0.5rem;
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: var(--transition);
 }
 
 .nav-menu li a:hover,
+.nav-menu li a:focus,
 .nav-menu li a[aria-current="page"] {
-  border-bottom: 2px solid #46ceb3;
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+/* Mobile Nav Toggle */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav-menu.open {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Reduced to match nav-menu */
+    margin-top: 1rem;
 }
 
 /* Hero Section */
 .contact-hero {
-  text-align: center;
-  margin-bottom: 2rem;
+    text-align: center;
+    padding: 3rem 0 2rem; /* Aligned with index.css hero */
 }
 
 .contact-hero h1 {
-  font-size: 2rem;
-  color: #1a4284;
+    font-size: 2.5rem; /* Aligned with index.css hero */
+    color: var(--primary-dark);
+    margin-bottom: 1rem; /* Aligned with index.css hero */
 }
 
 .contact-hero p {
-  font-size: 1.1rem;
-  color: #555;
+    font-size: 1.2rem; /* Aligned with index.css hero */
+    color: var(--light-text);
+    max-width: 700px; /* Aligned with index.css hero */
+    margin: 0 auto 2rem; /* Aligned with index.css hero */
 }
 
 /* Contact Cards */
 .contact-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
 }
 
 .card {
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  text-align: center;
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
 }
 
 .card i {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  color: #2e5fb2;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
 }
 
 .card h3 {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
-  color: #1a4284;
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    color: var(--primary-dark);
 }
 
 /* Form Section */
 .contact-form-section {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2rem; /* Retained to ensure button visibility */
 }
 
 .contact-form-section h2 {
-  font-size: 1.5rem;
-  color: #1a4284;
-  margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
 }
 
 .form-group {
-  margin-bottom: 1.2rem;
-  display: flex;
-  flex-direction: column;
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-group label {
-  font-weight: 600;
-  margin-bottom: 0.4rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
 }
 
 .form-group input,
 .form-group textarea {
-  padding: 0.75rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  outline: 2px solid #2e5fb2;
+    outline: 2px solid var(--primary-color);
 }
 
 .form-group.checkbox {
-  flex-direction: row;
-  align-items: center;
+    flex-direction: row;
+    align-items: center;
 }
 
 .form-group.checkbox input {
-  margin-right: 0.5rem;
-  width: auto;
+    margin-right: 0.5rem;
+    width: auto;
 }
 
 .submit-btn {
-  background-color: #2e5fb2;
-  color: white;
-  padding: 0.75rem 2rem;
-  border: none;
-  border-radius: 50px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-top: 1rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
 }
 
 .submit-btn:hover {
-  background-color: #1a4284;
+    background-color: var(--primary-dark);
 }
 
 /* Footer */
 .site-footer {
-  background-color: #1a4284;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 3rem;
+    background-color: var(--primary-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem; /* Aligned with index.css */
+    margin-top: 3rem; /* Aligned with index.css */
+    flex-shrink: 0; /* Aligned with index.css */
 }
 
+.site-footer .footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Aligned with index.css */
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.site-footer .footer-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.site-footer .footer-nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-menu.open {
+        display: flex;
+        gap: 0.5rem; /* Reduced to match nav-menu */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo a {
+        margin-bottom: 1rem;
+    }
+
+    .site-header {
+        padding: 0.75rem 0;
+    }
+}

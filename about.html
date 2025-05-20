@@ -2,28 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us – EduPath</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EduPath - Home</title>
   <link rel="stylesheet" href="about.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+  <style>
+    /* Minimal CSS to hide filtered out cards */
+    .hidden {
+      display: none !important;
+    }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header class="site-header">
-    <nav class="main-nav" aria-label="Main navigation">
-      <div class="logo">
-        <a href="index.html" aria-label="EduPath Home">
-          <i class="fas fa-graduation-cap"></i> EduPath
-        </a>
-      </div>
-      <ul class="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="about.html" aria-current="page">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <nav class="main-nav">
+        <div class="logo">
+          <a href="./index.html" aria-label="EduPath Home">
+            <i class="fas fa-graduation-cap" aria-hidden="true"></i> EduPath
+          </a>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./courses.html">Courses</a></li>
+          <li><a href="./career.html">Career Tools</a></li>
+          <li><a href="./about.html" aria-current="page">About Us</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main id="main-content" class="container">
@@ -97,7 +109,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>&copy; 2025 EduPath. All rights reserved.</p>
+    <a href="privacy.html">Privacy Policy</a>
   </footer>
 
   <script src="about.js" defer></script>

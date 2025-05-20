@@ -9,7 +9,7 @@
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  
+
   <header class="site-header">
     <div class="container">
       <nav class="main-nav" aria-label="Main navigation">
@@ -55,7 +55,7 @@
           </div>
           <div class="module-content" id="module-content">
             <h3 id="module-title">HTML Basics</h3>
-            <video controls width="100%" poster="images/html_poster.jpg">
+            <video controls width="100%" poster="images/html_poster.png">
               <source src="videos/html_basics.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -185,7 +185,13 @@
                 </div>
               </section>
               <footer>
-                <button class="enroll-btn learn-more" onclick="learnMore('Web Development Fundamentals')">Enroll <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                <div class="button-container">
+                  <button class="enroll-btn" onclick="enrollCourse('Web Development Fundamentals', this)">Enroll</button>
+                  <div class="post-enroll-buttons" style="display: none;">
+                    <button class="enrolled-btn" disabled>Enrolled</button>
+                    <button class="contents-btn" onclick="viewCourseContents('Web Development Fundamentals')">Course Contents</button>
+                  </div>
+                </div>
               </footer>
               <section class="project-section">
                 <h4>Course Project: Build a Personal Portfolio Website</h4>
@@ -251,7 +257,13 @@
                 </div>
               </section>
               <footer>
-                <button class="enroll-btn learn-more" onclick="learnMore('Data Science Essentials')">Enroll <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                <div class="button-container">
+                  <button class="enroll-btn" onclick="enrollCourse('Data Science Essentials', this)">Enroll</button>
+                  <div class="post-enroll-buttons" style="display: none;">
+                    <button class="enrolled-btn" disabled>Enrolled</button>
+                    <button class="contents-btn" onclick="viewCourseContents('Data Science Essentials')">Course Contents</button>
+                  </div>
+                </div>
               </footer>
               <section class="project-section">
                 <h4>Course Project: Analyze a Dataset</h4>
@@ -282,7 +294,7 @@
           <article class="course-card card" data-course="Digital Marketing Strategies" data-duration="6" data-category="Marketing" data-level="All Levels" tabindex="0">
             <div class="card-img">
               <img src="images/digital_marketing_course.png" alt="Digital Marketing Strategies">
-              <span class="tag">All Levels</span>
+              <span class="title">All Levels</span>
             </div>
             <div class="card-content">
               <header>
@@ -317,7 +329,13 @@
                 </div>
               </section>
               <footer>
-                <button class="enroll-btn learn-more" onclick="learnMore('Digital Marketing Strategies')">Enroll <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                <div class="button-container">
+                  <button class="enroll-btn" onclick="enrollCourse('Digital Marketing Strategies', this)">Enroll</button>
+                  <div class="post-enroll-buttons" style="display: none;">
+                    <button class="enrolled-btn" disabled>Enrolled</button>
+                    <button class="contents-btn" onclick="viewCourseContents('Digital Marketing Strategies')">Course Contents</button>
+                  </div>
+                </div>
               </footer>
               <section class="project-section">
                 <h4>Course Project: Create a Social Media Campaign</h4>
@@ -345,669 +363,9 @@
             </div>
           </article>
 
-          <article class="course-card card" data-course="Python Programming Basics" data-duration="6" data-category="Technology" data-level="Beginner" tabindex="0">
-            <div class="card-img">
-              <img src="images/python_course.png" alt="Python Programming Basics">
-              <span class="tag">Beginner</span>
-            </div>
-            <div class="card-content">
-              <header>
-                <h2>Python Programming Basics</h2>
-              </header>
-              <section>
-                <p><strong>Level:</strong> Beginner</p>
-                <p><strong>Duration:</strong> 6 weeks</p>
-                <p><strong>Students:</strong> 1,200+</p>
-                <p><strong>Rating:</strong> 4.5</p>
-                <ul>
-                  <li>Variables, loops, functions</li>
-                  <li>Conditionals and logic</li>
-                  <li>Problem-solving tasks</li>
-                </ul>
-                <div class="progress-tracker">
-                  <progress value="0" max="100"></progress>
-                  <span class="progress-percentage">0%</span>
-                  <div class="milestone-markers">
-                    <span class="milestone">25%</span>
-                    <span class="milestone">50%</span>
-                    <span class="milestone">75%</span>
-                    <span class="milestone">100%</span>
-                  </div>
-                  <p class="progress-details">Next: Lesson 1 - Introduction</p>
-                </div>
-                <div class="progress-stats">
-                  <h4>Progress Statistics</h4>
-                  <p class="lessons-completed">0/5</p>
-                  <p class="time-spent">0 mins</p>
-                  <p class="avg-quiz-score">0%</p>
-                </div>
-              </section>
-              <footer>
-                <button class="enroll-btn learn-more" onclick="learnMore('Python Programming Basics')">Enroll <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
-              </footer>
-              <section class="project-section">
-                <h4>Course Project: Build a Simple Calculator</h4>
-                <p><strong>Instructions:</strong> Create a Python program for a basic calculator that performs addition, subtraction, multiplication, and division. Submit your code snippet.</p>
-                <form class="project-submission" onsubmit="submitProject(event, 'Python Programming Basics')">
-                  <label for="submission-python-basics">Your Submission:</label>
-                  <textarea id="submission-python-basics" name="submission" placeholder="Paste your code snippet" required></textarea>
-                  <button type="submit">Submit Project</button>
-                </form>
-                <div class="submission-list" id="submissions-python-basics"></div>
-                <div class="peer-reviews">
-                  <h5>Peer Reviews</h5>
-                  <button onclick="viewPeerReviews('Python Programming Basics')">View Peer Submissions</button>
-                  <div class="peer-review-list" id="peer-reviews-python-basics"></div>
-                </div>
-              </section>
-              <section class="discussion-section">
-                <h4>Discussion Board</h4>
-                <form class="discussion-form" onsubmit="postDiscussion(event, 'Python Programming Basics')">
-                  <textarea placeholder="Share your thoughts..."></textarea>
-                  <button type="submit">Post</button>
-                </form>
-                <div class="discussion-list" id="discussions-python-programming-basics"></div>
-              </section>
-            </div>
-          </article>
-
-          <article class="course-card card" data-course="UI/UX Design Principles" data-duration="8" data-category="Design" data-level="Intermediate" tabindex="0">
-            <div class="card-img">
-              <img src="images/uiux_course.png" alt="UI/UX Design Principles">
-              <span class="tag">Intermediate</span>
-            </div>
-            <div class="card-content">
-              <header>
-                <h2>UI/UX Design Principles</h2>
-              </header>
-              <section>
-                <p><strong>Level:</strong> Intermediate</p>
-                <p><strong>Duration:</strong> 8 weeks</p>
-                <p><strong>Students:</strong> 1,600+</p>
-                <p><strong>Rating:</strong> 4.8</p>
-                <ul>
-                  <li>User flows and wireframes</li>
-                  <li>Accessibility best practices</li>
-                  <li>Figma and Adobe XD usage</li>
-                </ul>
-                <div class="progress-tracker">
-                  <progress value="0" max="100"></progress>
-                  <span class="progress-percentage">0%</span>
-                  <div class="milestone-markers">
-                    <span class="milestone">25%</span>
-                    <span class="milestone">50%</span>
-                    <span class="milestone">75%</span>
-                    <span class="milestone">100%</span>
-                  </div>
-                  <p class="progress-details">Next: Lesson 1 - Introduction</p>
-                </div>
-                <div class="progress-stats">
-                  <h4>Progress Statistics</h4>
-                  <p class="lessons-completed">0/5</p>
-                  <p class="time-spent">0 mins</p>
-                  <p class="avg-quiz-score">0%</p>
-                </div>
-              </section>
-              <footer>
-                <button class="enroll-btn learn-more" onclick="learnMore('UI/UX Design Principles')">Enroll <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
-              </footer>
-              <section class="project-section">
-                <h4>Course Project: Design a Mobile App Interface</h4>
-                <p><strong>Instructions:</strong> Create a wireframe for a mobile app interface using Figma or Adobe XD. Submit a URL to your design or a screenshot description.</p>
-                <form class="project-submission" onsubmit="submitProject(event, 'UI/UX Design Principles')">
-                  <label for="submission-uiux">Your Submission:</label>
-                  <textarea id="submission-uiux" name="submission" placeholder="Paste your design URL or description" required></textarea>
-                  <button type="submit">Submit Project</button>
-                </form>
-                <div class="submission-list" id="submissions-uiux"></div>
-                <div class="peer-reviews">
-                  <h5>Peer Reviews</h5>
-                  <button onclick="viewPeerReviews('UI/UX Design Principles')">View Peer Submissions</button>
-                  <div class="peer-review-list" id="peer-reviews-uiux"></div>
-                </div>
-              </section>
-              <section class="discussion-section">
-                <h4>Discussion Board</h4>
-                <form class="discussion-form" onsubmit="postDiscussion(event, 'UI/UX Design Principles')">
-                  <textarea placeholder="Share your thoughts..."></textarea>
-                  <button type="submit">Post</button>
-                </form>
-                <div class="discussion-list" id="discussions-ui-ux-design-principles"></div>
-              </section>
-            </div>
-          </article>
-
-          <article class="course-card card" data-course="Business Analytics" data-duration="12" data-category="Business" data-level="Advanced" tabindex="0">
-            <div class="card-img">
-              <img src="images/business_analytics_course.png" alt="Business Analytics">
-              <span class="tag">Advanced</span>
-            </div>
-            <div class="card-content">
-              <header>
-                <h2>Business Analytics</h2>
-              </header>
-              <section>
-                <p><strong>Level:</strong> Advanced</p>
-                <p><strong>Duration:</strong> 12 weeks</p>
-                <p><strong>Students:</strong> 900+</p>
-                <p><strong>Rating:</strong> 4.4</p>
-                <ul>
-                  <li>Dashboard creation</li>
-                  <li>Forecasting techniques</li>
-                  <li>SQL + Excel + Power BI</li>
-                </ul>
-                <div class="progress-tracker">
-                  <progress value="0" max="100"></progress>
-                  <span class="progress-percentage">0%</span>
-                  <div class="milestone-markers">
-                    <span class="milestone">25%</span>
-                    <span class="milestone">50%</span>
-                    <span class="milestone">75%</span>
-                    <span class="milestone">100%</span>
-                  </div>
-                  <p class="progress-details">Next: Lesson 1 - Introduction</p>
-                </div>
-                <div class="progress-stats">
-                  <h4>Progress Statistics</h4>
-                  <p class="lessons-completed">0/5</p>
-                  <p class="time-spent">0 mins</p>
-                  <p class="avg-quiz-score">0%</p>
-                </div>
-              </section>
-              <footer>
-                <button class="enroll-btn learn-more" onclick="learnMore('Business Analytics')">Enroll <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
-              </footer>
-              <section class="project-section">
-                <h4>Course Project: Create a Business Dashboard</h4>
-                <p><strong>Instructions:</strong> Build a dashboard using Power BI or Excel to visualize business metrics. Submit a URL to your dashboard or a detailed description.</p>
-                <form class="project-submission" onsubmit="submitProject(event, 'Business Analytics')">
-                  <label for="submission-business-analytics">Your Submission:</label>
-                  <textarea id="submission-business-analytics" name="submission" placeholder="Paste your dashboard URL or description" required></textarea>
-                  <button type="submit">Submit Project</button>
-                </form>
-                <div class="submission-list" id="submissions-business-analytics"></div>
-                <div class="peer-reviews">
-                  <h5>Peer Reviews</h5>
-                  <button onclick="viewPeerReviews('Business Analytics')">View Peer Submissions</button>
-                  <div class="peer-review-list" id="peer-reviews-business-analytics"></div>
-                </div>
-              </section>
-              <section class="discussion-section">
-                <h4>Discussion Board</h4>
-                <form class="discussion-form" onsubmit="postDiscussion(event, 'Business Analytics')">
-                  <textarea placeholder="Share your thoughts..."></textarea>
-                  <button type="submit">Post</button>
-                </form>
-                <div class="discussion-list" id="discussions-business-analytics"></div>
-              </section>
-            </div>
-          </article>
-
-          <article class="course-card card" data-course="Machine Learning with Python" data-duration="14" data-category="Technology" data-level="Advanced" tabindex="0">
-            <div class="card-img">
-              <img src="images/ml_course.png" alt="Machine Learning with Python">
-              <span class="tag">Advanced</span>
-            </div>
-            <div class="card-content">
-              <header>
-                <h2>Machine Learning with Python</h2>
-              </header>
-              <section>
-                <p><strong>Level:</strong> Advanced</p>
-                <p><strong>Duration:</strong> 14 weeks</p>
-                <p><strong>Students:</strong> 3,000+</p>
-                <p><strong>Rating:</strong> 4.9</p>
-                <ul>
-                  <li>Supervised + Unsupervised</li>
-                  <li>Scikit-learn, Pandas, NumPy</li>
-                  <li>Capstone projects</li>
-                </ul>
-                <div class="progress-tracker">
-                  <progress value="0" max="100"></progress>
-                  <span class="progress-percentage">0%</span>
-                  <div class="milestone-markers">
-                    <span class="milestone">25%</span>
-                    <span class="milestone">50%</span>
-                    <span class="milestone">75%</span>
-                    <span class="milestone">100%</span>
-                  </div>
-                  <p class="progress-details">Next: Lesson 1 - Introduction</p>
-                </div>
-                <div class="progress-stats">
-                  <h4>Progress Statistics</h4>
-                  <p class="lessons-completed">0/5</p>
-                  <p class="time-spent">0 mins</p>
-                  <p class="avg-quiz-score">0%</p>
-                </div>
-              </section>
-              <footer>
-                <button class="enroll-btn learn-more" onclick="learnMore('Machine Learning with Python')">Enroll <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
-              </footer>
-              <section class="project-section">
-                <h4>Course Project: Build a Predictive Model</h4>
-                <p><strong>Instructions:</strong> Use Python to create a predictive model for a dataset of your choice. Submit a URL to your code or a detailed description.</p>
-                <form class="project-submission" onsubmit="submitProject(event, 'Machine Learning with Python')">
-                  <label for="submission-ml-python">Your Submission:</label>
-                  <textarea id="submission-ml-python" name="submission" placeholder="Paste your code URL or description" required></textarea>
-                  <button type="submit">Submit Project</button>
-                </form>
-                <div class="submission-list" id="submissions-ml-python"></div>
-                <div class="peer-reviews">
-                  <h5>Peer Reviews</h5>
-                  <button onclick="viewPeerReviews('Machine Learning with Python')">View Peer Submissions</button>
-                  <div class="peer-review-list" id="peer-reviews-ml-python"></div>
-                </div>
-              </section>
-              <section class="discussion-section">
-                <h4>Discussion Board</h4>
-                <form class="discussion-form" onsubmit="postDiscussion(event, 'Machine Learning with Python')">
-                  <textarea placeholder="Share your thoughts..."></textarea>
-                  <button type="submit">Post</button>
-                </form>
-                <div class="discussion-list" id="discussions-machine-learning-with-python"></div>
-              </section>
-            </div>
-          </article>
-
-          <article class="course-card card" data-course="Project Management Basics" data-duration="5" data-category="Business" data-level="Beginner" tabindex="0">
-            <div class="card-img">
-              <img src="images/project_management_course.png" alt="Project Management Basics">
-              <span class="tag">Beginner</span>
-            </div>
-            <div class="card-content">
-              <header>
-                <h2>Project Management Basics</h2>
-              </header>
-              <section>
-                <p><strong>Level:</strong> Beginner</p>
-                <p><strong>Duration:</strong> 5 weeks</p>
-                <p><strong>Students:</strong> 2,500+</p>
-                <p><strong>Rating:</strong> 4.6</p>
-                <ul>
-                  <li>Agile and Waterfall models</li>
-                  <li>Team and time management</li>
-                  <li>Case study based</li>
-                </ul>
-                <div class="progress-tracker">
-                  <progress value="0" max="100"></progress>
-                  <span class="progress-percentage">0%</span>
-                  <div class="milestone-markers">
-                    <span class="milestone">25%</span>
-                    <span class="milestone">50%</span>
-                    <span class="milestone">75%</span>
-                    <span class="milestone">100%</span>
-                  </div>
-                  <p class="progress-details">Next: Lesson 1 - Introduction</p>
-                </div>
-                <div class="progress-stats">
-                  <h4>Progress Statistics</h4>
-                  <p class="lessons-completed">0/5</p>
-                  <p class="time-spent">0 mins</p>
-                  <p class="avg-quiz-score">0%</p>
-                </div>
-              </section>
-              <footer>
-                <button class="enroll-btn learn-more" onclick="learnMore('Project Management Basics')">Enroll <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
-              </footer>
-              <section class="project-section">
-                <h4>Course Project: Plan a Small Project</h4>
-                <p><strong>Instructions:</strong> Create a project plan for a small project using Agile or Waterfall methodology. Submit your plan as a text description.</p>
-                <form class="project-submission" onsubmit="submitProject(event, 'Project Management Basics')">
-                  <label for="submission-project-management">Your Submission:</label>
-                  <textarea id="submission-project-management" name="submission" placeholder="Paste your project plan description" required></textarea>
-                  <button type="submit">Submit Project</button>
-                </form>
-                <div class="submission-list" id="submissions-project-management"></div>
-                <div class="peer-reviews">
-                  <h5>Peer Reviews</h5>
-                  <button onclick="viewPeerReviews('Project Management Basics')">View Peer Submissions</button>
-                  <div class="peer-review-list" id="peer-reviews-project-management"></div>
-                </div>
-              </section>
-              <section class="discussion-section">
-                <h4>Discussion Board</h4>
-                <form class="discussion-form" onsubmit="postDiscussion(event, 'Project Management Basics')">
-                  <textarea placeholder="Share your thoughts..."></textarea>
-                  <button type="submit">Post</button>
-                </form>
-                <div class="discussion-list" id="discussions-project-management-basics"></div>
-              </section>
-            </div>
-          </article>
-
-          <article class="course-card card" data-course="Introduction to Cybersecurity" data-duration="9" data-category="Technology" data-level="Intermediate" tabindex="0">
-            <div class="card-img">
-              <img src="images/cybersecurity_course.png" alt="Introduction to Cybersecurity">
-              <span class="tag">Intermediate</span>
-            </div>
-            <div class="card-content">
-              <header>
-                <h2>Introduction to Cybersecurity</h2>
-              </header>
-              <section>
-                <p><strong>Level:</strong> Intermediate</p>
-                <p><strong>Duration:</strong> 9 weeks</p>
-                <p><strong>Students:</strong> 1,050+</p>
-                <p><strong>Rating:</strong> 4.7</p>
-                <ul>
-                  <li>Cyber attacks & prevention</li>
-                  <li>Security tools & concepts</li>
-                  <li>Hands-on lab activities</li>
-                </ul>
-                <div class="progress-tracker">
-                  <progress value="0" max="100"></progress>
-                  <span class="progress-percentage">0%</span>
-                  <div class="milestone-markers">
-                    <span class="milestone">25%</span>
-                    <span class="milestone">50%</span>
-                    <span class="milestone">75%</span>
-                    <span class="milestone">100%</span>
-                  </div>
-                  <p class="progress-details">Next: Lesson 1 - Introduction</p>
-                </div>
-                <div class="progress-stats">
-                  <h4>Progress Statistics</h4>
-                  <p class="lessons-completed">0/5</p>
-                  <p class="time-spent">0 mins</p>
-                  <p class="avg-quiz-score">0%</p>
-                </div>
-              </section>
-              <footer>
-                <button class="enroll-btn learn-more" onclick="learnMore('Introduction to Cybersecurity')">Enroll <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
-              </footer>
-              <section class="project-section">
-                <h4>Course Project: Simulate a Security Audit</h4>
-                <p><strong>Instructions:</strong> Perform a mock security audit on a fictional website. Submit your findings as a text description.</p>
-                <form class="project-submission" onsubmit="submitProject(event, 'Introduction to Cybersecurity')">
-                  <label for="submission-cybersecurity">Your Submission:</label>
-                  <textarea id="submission-cybersecurity" name="submission" placeholder="Paste your audit findings" required></textarea>
-                  <button type="submit">Submit Project</button>
-                </form>
-                <div class="submission-list" id="submissions-cybersecurity"></div>
-                <div class="peer-reviews">
-                  <h5>Peer Reviews</h5>
-                  <button onclick="viewPeerReviews('Introduction to Cybersecurity')">View Peer Submissions</button>
-                  <div class="peer-review-list" id="peer-reviews-cybersecurity"></div>
-                </div>
-              </section>
-              <section class="discussion-section">
-                <h4>Discussion Board</h4>
-                <form class="discussion-form" onsubmit="postDiscussion(event, 'Introduction to Cybersecurity')">
-                  <textarea placeholder="Share your thoughts..."></textarea>
-                  <button type="submit">Post</button>
-                </form>
-                <div class="discussion-list" id="discussions-introduction-to-cybersecurity"></div>
-              </section>
-            </div>
-          </article>
-
-          <article class="course-card card" data-course="Graphic Design with Canva" data-duration="4" data-category="Design" data-level="All Levels" tabindex="0">
-            <div class="card-img">
-              <img src="images/graphic_design_course.png" alt="Graphic Design with Canva">
-              <span class="tag">All Levels</span>
-            </div>
-            <div class="card-content">
-              <header>
-                <h2>Graphic Design with Canva</h2>
-              </header>
-              <section>
-                <p><strong>Level:</strong> All Levels</p>
-                <p><strong>Duration:</strong> 4 weeks</p>
-                <p><strong>Students:</strong> 850+</p>
-                <p><strong>Rating:</strong> 4.5</p>
-                <ul>
-                  <li>Design theory basics</li>
-                  <li>Templates and layouts</li>
-                  <li>Social media graphics</li>
-                </ul>
-                <div class="progress-tracker">
-                  <progress value="0" max="100"></progress>
-                  <span class="progress-percentage">0%</span>
-                  <div class="milestone-markers">
-                    <span class="milestone">25%</span>
-                    <span class="milestone">50%</span>
-                    <span class="milestone">75%</span>
-                    <span class="milestone">100%</span>
-                  </div>
-                  <p class="progress-details">Next: Lesson 1 - Introduction</p>
-                </div>
-                <div class="progress-stats">
-                  <h4>Progress Statistics</h4>
-                  <p class="lessons-completed">0/5</p>
-                  <p class="time-spent">0 mins</p>
-                  <p class="avg-quiz-score">0%</p>
-                </div>
-              </section>
-              <footer>
-                <button class="enroll-btn learn-more" onclick="learnMore('Graphic Design with Canva')">Enroll <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
-              </footer>
-              <section class="project-section">
-                <h4>Course Project: Design a Social Media Post</h4>
-                <p><strong>Instructions:</strong> Use Canva to create a social media post for a fictional brand. Submit a URL to your design or a description.</p>
-                <form class="project-submission" onsubmit="submitProject(event, 'Graphic Design with Canva')">
-                  <label for="submission-graphic-design">Your Submission:</label>
-                  <textarea id="submission-graphic-design" name="submission" placeholder="Paste your design URL or description" required></textarea>
-                  <button type="submit">Submit Project</button>
-                </form>
-                <div class="submission-list" id="submissions-graphic-design"></div>
-                <div class="peer-reviews">
-                  <h5>Peer Reviews</h5>
-                  <button onclick="viewPeerReviews('Graphic Design with Canva')">View Peer Submissions</button>
-                  <div class="peer-review-list" id="peer-reviews-graphic-design"></div>
-                </div>
-              </section>
-              <section class="discussion-section">
-                <h4>Discussion Board</h4>
-                <form class="discussion-form" onsubmit="postDiscussion(event, 'Graphic Design with Canva')">
-                  <textarea placeholder="Share your thoughts..."></textarea>
-                  <button type="submit">Post</button>
-                </form>
-                <div class="discussion-list" id="discussions-graphic-design-with-canva"></div>
-              </section>
-            </div>
-          </article>
-
-          <article class="course-card card" data-course="JavaScript Essentials" data-duration="7" data-category="Technology" data-level="Beginner" tabindex="0">
-            <div class="card-img">
-              <img src="images/javascript_course.png" alt="JavaScript Essentials">
-              <span class="tag">Beginner</span>
-            </div>
-            <div class="card-content">
-              <header>
-                <h2>JavaScript Essentials</h2>
-              </header>
-              <section>
-                <p><strong>Level:</strong> Beginner</p>
-                <p><strong>Duration:</strong> 7 weeks</p>
-                <p><strong>Students:</strong> 1,500+</p>
-                <p><strong>Rating:</strong> 4.6</p>
-                <ul>
-                  <li>DOM manipulation</li>
-                  <li>Events and interactivity</li>
-                  <li>Basic scripting projects</li>
-                </ul>
-                <div class="progress-tracker">
-                  <progress value="0" max="100"></progress>
-                  <span class="progress-percentage">0%</span>
-                  <div class="milestone-markers">
-                    <span class="milestone">25%</span>
-                    <span class="milestone">50%</span>
-                    <span class="milestone">75%</span>
-                    <span class="milestone">100%</span>
-                  </div>
-                  <p class="progress-details">Next: Lesson 1 - Introduction</p>
-                </div>
-                <div class="progress-stats">
-                  <h4>Progress Statistics</h4>
-                  <p class="lessons-completed">0/5</p>
-                  <p class="time-spent">0 mins</p>
-                  <p class="avg-quiz-score">0%</p>
-                </div>
-              </section>
-              <footer>
-                <button class="enroll-btn learn-more" onclick="learnMore('JavaScript Essentials')">Enroll <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
-              </footer>
-              <section class="project-section">
-                <h4>Course Project: Build an Interactive Webpage</h4>
-                <p><strong>Instructions:</strong> Create a webpage with JavaScript interactivity (e.g., a to-do list or quiz). Submit a URL to your webpage or code snippet.</p>
-                <form class="project-submission" onsubmit="submitProject(event, 'JavaScript Essentials')">
-                  <label for="submission-javascript">Your Submission:</label>
-                  <textarea id="submission-javascript" name="submission" placeholder="Paste your project URL or code snippet" required></textarea>
-                  <button type="submit">Submit Project</button>
-                </form>
-                <div class="submission-list" id="submissions-javascript"></div>
-                <div class="peer-reviews">
-                  <h5>Peer Reviews</h5>
-                  <button onclick="viewPeerReviews('JavaScript Essentials')">View Peer Submissions</button>
-                  <div class="peer-review-list" id="peer-reviews-javascript"></div>
-                </div>
-              </section>
-              <section class="discussion-section">
-                <h4>Discussion Board</h4>
-                <form class="discussion-form" onsubmit="postDiscussion(event, 'JavaScript Essentials')">
-                  <textarea placeholder="Share your thoughts..."></textarea>
-                  <button type="submit">Post</button>
-                </form>
-                <div class="discussion-list" id="discussions-javascript-essentials"></div>
-              </section>
-            </div>
-          </article>
-
-          <article class="course-card card" data-course="Entrepreneurship 101" data-duration="6" data-category="Business" data-level="All Levels" tabindex="0">
-            <div class="card-img">
-              <img src="images/entrepreneurship_course.png" alt="Entrepreneurship 101">
-              <span class="tag">All Levels</span>
-            </div>
-            <div class="card-content">
-              <header>
-                <h2>Entrepreneurship 101</h2>
-              </header>
-              <section>
-                <p><strong>Level:</strong> All Levels</p>
-                <p><strong>Duration:</strong> 6 weeks</p>
-                <p><strong>Students:</strong> 1,300+</p>
-                <p><strong>Rating:</strong> 4.7</p>
-                <ul>
-                  <li>Business planning</li>
-                  <li>Funding strategies</li>
-                  <li>Market analysis</li>
-                </ul>
-                <div class="progress-tracker">
-                  <progress value="0" max="100"></progress>
-                  <span class="progress-percentage">0%</span>
-                  <div class="milestone-markers">
-                    <span class="milestone">25%</span>
-                    <span class="milestone">50%</span>
-                    <span class="milestone">75%</span>
-                    <span class="milestone">100%</span>
-                  </div>
-                  <p class="progress-details">Next: Lesson 1 - Introduction</p>
-                </div>
-                <div class="progress-stats">
-                  <h4>Progress Statistics</h4>
-                  <p class="lessons-completed">0/5</p>
-                  <p class="time-spent">0 mins</p>
-                  <p class="avg-quiz-score">0%</p>
-                </div>
-              </section>
-              <footer>
-                <button class="enroll-btn learn-more" onclick="learnMore('Entrepreneurship 101')">Enroll <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
-              </footer>
-              <section class="project-section">
-                <h4>Course Project: Create a Business Pitch Deck</h4>
-                <p><strong>Instructions:</strong> Develop a pitch deck for a startup idea, including problem, solution, and market analysis. Submit a URL to your presentation or text description.</p>
-                <form class="project-submission" onsubmit="submitProject(event, 'Entrepreneurship 101')">
-                  <label for="submission-entrepreneurship">Your Submission:</label>
-                  <textarea id="submission-entrepreneurship" name="submission" placeholder="Paste your presentation URL or description" required></textarea>
-                  <button type="submit">Submit Project</button>
-                </form>
-                <div class="submission-list" id="submissions-entrepreneurship"></div>
-                <div class="peer-reviews">
-                  <h5>Peer Reviews</h5>
-                  <button onclick="viewPeerReviews('Entrepreneurship 101')">View Peer Submissions</button>
-                  <div class="peer-review-list" id="peer-reviews-entrepreneurship"></div>
-                </div>
-              </section>
-              <section class="discussion-section">
-                <h4>Discussion Board</h4>
-                <form class="discussion-form" onsubmit="postDiscussion(event, 'Entrepreneurship 101')">
-                  <textarea placeholder="Share your thoughts..."></textarea>
-                  <button type="submit">Post</button>
-                </form>
-                <div class="discussion-list" id="discussions-entrepreneurship-101"></div>
-              </section>
-            </div>
-          </article>
-
-          <article class="course-card card" data-course="Digital Illustration Basics" data-duration="5" data-category="Design" data-level="Beginner" tabindex="0">
-            <div class="card-img">
-              <img src="images/illustration_course.png" alt="Digital Illustration Basics">
-              <span class="tag">Beginner</span>
-            </div>
-            <div class="card-content">
-              <header>
-                <h2>Digital Illustration Basics</h2>
-              </header>
-              <section>
-                <p><strong>Level:</strong> Beginner</p>
-                <p><strong>Duration:</strong> 5 weeks</p>
-                <p><strong>Students:</strong> 950+</p>
-                <p><strong>Rating:</strong> 4.5</p>
-                <ul>
-                  <li>Vector art techniques</li>
-                  <li>Procreate or Illustrator</li>
-                  <li>Basic composition</li>
-                </ul>
-                <div class="progress-tracker">
-                  <progress value="0" max="100"></progress>
-                  <span class="progress-percentage">0%</span>
-                  <div class="milestone-markers">
-                    <span class="milestone">25%</span>
-                    <span class="milestone">50%</span>
-                    <span class="milestone">75%</span>
-                    <span class="milestone">100%</span>
-                  </div>
-                  <p class="progress-details">Next: Lesson 1 - Introduction</p>
-                </div>
-                <div class="progress-stats">
-                  <h4>Progress Statistics</h4>
-                  <p class="lessons-completed">0/5</p>
-                  <p class="time-spent">0 mins</p>
-                  <p class="avg-quiz-score">0%</p>
-                </div>
-              </section>
-              <footer>
-                <button class="enroll-btn learn-more" onclick="learnMore('Digital Illustration Basics')">Enroll <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
-              </footer>
-              <section class="project-section">
-                <h4>Course Project: Design a Digital Poster</h4>
-                <p><strong>Instructions:</strong> Create a digital poster using Procreate or Adobe Illustrator for an event or cause. Submit a URL to your design or description.</p>
-                <form class="project-submission" onsubmit="submitProject(event, 'Digital Illustration Basics')">
-                  <label for="submission-illustration">Your Submission:</label>
-                  <textarea id="submission-illustration" name="submission" placeholder="Paste your design URL or description" required></textarea>
-                  <button type="submit">Submit Project</button>
-                </form>
-                <div class="submission-list" id="submissions-illustration"></div>
-                <div class="peer-reviews">
-                  <h5>Peer Reviews</h5>
-                  <button onclick="viewPeerReviews('Digital Illustration Basics')">View Peer Submissions</button>
-                  <div class="peer-review-list" id="peer-reviews-illustration"></div>
-                </div>
-              </section>
-              <section class="discussion-section">
-                <h4>Discussion Board</h4>
-                <form class="discussion-form" onsubmit="postDiscussion(event, 'Digital Illustration Basics')">
-                  <textarea placeholder="Share your thoughts..."></textarea>
-                  <button type="submit">Post</button>
-                </form>
-                <div class="discussion-list" id="discussions-digital-illustration-basics"></div>
-              </section>
-            </div>
-          </article>
-
           <article class="course-card card" data-course="Content Marketing Mastery" data-duration="8" data-category="Marketing" data-level="Intermediate" tabindex="0">
             <div class="card-img">
-              <img src="images/content_marketing_course.png" alt="Content Marketing Mastery">
+              <img src="images/content-marketing-course.png" alt="Content Marketing Mastery">
               <span class="tag">Intermediate</span>
             </div>
             <div class="card-content">
@@ -1043,7 +401,13 @@
                 </div>
               </section>
               <footer>
-                <button class="enroll-btn learn-more" onclick="learnMore('Content Marketing Mastery')">Enroll <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                <div class="button-container">
+                  <button class="enroll-btn" onclick="enrollCourse('Content Marketing Mastery', this)">Enroll</button>
+                  <div class="post-enroll-buttons" style="display: none;">
+                    <button class="enrolled-btn" disabled>Enrolled</button>
+                    <button class="contents-btn" onclick="viewCourseContents('Content Marketing Mastery')">Course Contents</button>
+                  </div>
+                </div>
               </footer>
               <section class="project-section">
                 <h4>Course Project: Develop a Content Calendar</h4>
@@ -1070,6 +434,222 @@
               </section>
             </div>
           </article>
+
+          <article class="course-card card" data-course="Cloud Computing Fundamentals" data-duration="10" data-category="Technology" data-level="Intermediate" tabindex="0">
+            <div class="card-img">
+              <img src="images/cloud-computing.png" alt="Cloud Computing Fundamentals">
+              <span class="tag">Intermediate</span>
+            </div>
+            <div class="card-content">
+              <header>
+                <h2>Cloud Computing Fundamentals</h2>
+              </header>
+              <section>
+                <p><strong>Level:</strong> Intermediate</p>
+                <p><strong>Duration:</strong> 10 weeks</p>
+                <p><strong>Students:</strong> 1,200+</p>
+                <p><strong>Rating:</strong> 4.6</p>
+                <ul>
+                  <li>AWS, Azure, and Google Cloud</li>
+                  <li>Cloud architecture basics</li>
+                  <li>Deployment and scaling</li>
+                </ul>
+                <div class="progress-tracker">
+                  <progress value="0" max="100"></progress>
+                  <span class="progress-percentage">0%</span>
+                  <div class="milestone-markers">
+                    <span class="milestone">25%</span>
+                    <span class="milestone">50%</span>
+                    <span class="milestone">75%</span>
+                    <span class="milestone">100%</span>
+                  </div>
+                  <p class="progress-details">Next: Lesson 1 - Introduction</p>
+                </div>
+                <div class="progress-stats">
+                  <h4>Progress Statistics</h4>
+                  <p class="lessons-completed">0/5</p>
+                  <p class="time-spent">0 mins</p>
+                  <p class="avg-quiz-score">0%</p>
+                </div>
+              </section>
+              <footer>
+                <div class="button-container">
+                  <button class="enroll-btn" onclick="enrollCourse('Cloud Computing Fundamentals', this)">Enroll</button>
+                  <div class="post-enroll-buttons" style="display: none;">
+                    <button class="enrolled-btn" disabled>Enrolled</button>
+                    <button class="contents-btn" onclick="viewCourseContents('Cloud Computing Fundamentals')">Course Contents</button>
+                  </div>
+                </div>
+              </footer>
+              <section class="project-section">
+                <h4>Course Project: Deploy a Simple Web Application</h4>
+                <p><strong>Instructions:</strong> Deploy a simple web application on a cloud platform (e.g., AWS or Azure). Submit a URL to your deployed app or a detailed description.</p>
+                <form class="project-submission" onsubmit="submitProject(event, 'Cloud Computing Fundamentals')">
+                  <label for="submission-cloud-computing">Your Submission:</label>
+                  <textarea id="submission-cloud-computing" name="submission" placeholder="Paste your app URL or description" required></textarea>
+                  <button type="submit">Submit Project</button>
+                </form>
+                <div class="submission-list" id="submissions-cloud-computing"></div>
+                <div class="peer-reviews">
+                  <h5>Peer Reviews</h5>
+                  <button onclick="viewPeerReviews('Cloud Computing Fundamentals')">View Peer Submissions</button>
+                  <div class="peer-review-list" id="peer-reviews-cloud-computing"></div>
+                </div>
+              </section>
+              <section class="discussion-section">
+                <h4>Discussion Board</h4>
+                <form class="discussion-form" onsubmit="postDiscussion(event, 'Cloud Computing Fundamentals')">
+                  <textarea placeholder="Share your thoughts..."></textarea>
+                  <button type="submit">Post</button>
+                </form>
+                <div class="discussion-list" id="discussions-cloud-computing-fundamentals"></div>
+              </section>
+            </div>
+          </article>
+
+          <article class="course-card card" data-course="Financial Planning Essentials" data-duration="6" data-category="Business" data-level="Beginner" tabindex="0">
+            <div class="card-img">
+              <img src="images/financial-planning.png" alt="Financial Planning Essentials">
+              <span class="tag">Beginner</span>
+            </div>
+            <div class="card-content">
+              <header>
+                <h2>Financial Planning Essentials</h2>
+              </header>
+              <section>
+                <p><strong>Level:</strong> Beginner</p>
+                <p><strong>Duration:</strong> 6 weeks</p>
+                <p><strong>Students:</strong> 1,000+</p>
+                <p><strong>Rating:</strong> 4.5</p>
+                <ul>
+                  <li>Budgeting and saving</li>
+                  <li>Investment basics</li>
+                  <li>Retirement planning</li>
+                </ul>
+                <div class="progress-tracker">
+                  <progress value="0" max="100"></progress>
+                  <span class="progress-percentage">0%</span>
+                  <div class="milestone-markers">
+                    <span class="milestone">25%</span>
+                    <span class="milestone">50%</span>
+                    <span class="milestone">75%</span>
+                    <span class="milestone">100%</span>
+                  </div>
+                  <p class="progress-details">Next: Lesson 1 - Introduction</p>
+                </div>
+                <div class="progress-stats">
+                  <h4>Progress Statistics</h4>
+                  <p class="lessons-completed">0/5</p>
+                  <p class="time-spent">0 mins</p>
+                  <p class="avg-quiz-score">0%</p>
+                </div>
+              </section>
+              <footer>
+                <div class="button-container">
+                  <button class="enroll-btn" onclick="enrollCourse('Financial Planning Essentials', this)">Enroll</button>
+                  <div class="post-enroll-buttons" style="display: none;">
+                    <button class="enrolled-btn" disabled>Enrolled</button>
+                    <button class="contents-btn" onclick="viewCourseContents('Financial Planning Essentials')">Course Contents</button>
+                  </div>
+                </div>
+              </footer>
+              <section class="project-section">
+                <h4>Course Project: Create a Personal Budget Plan</h4>
+                <p><strong>Instructions:</strong> Develop a personal budget plan for a fictional scenario. Submit your plan as a text description or a spreadsheet URL.</p>
+                <form class="project-submission" onsubmit="submitProject(event, 'Financial Planning Essentials')">
+                  <label for="submission-financial-planning">Your Submission:</label>
+                  <textarea id="submission-financial-planning" name="submission" placeholder="Paste your budget plan or URL" required></textarea>
+                  <button type="submit">Submit Project</button>
+                </form>
+                <div class="submission-list" id="submissions-financial-planning"></div>
+                <div class="peer-reviews">
+                  <h5>Peer Reviews</h5>
+                  <button onclick="viewPeerReviews('Financial Planning Essentials')">View Peer Submissions</button>
+                  <div class="peer-review-list" id="peer-reviews-financial-planning"></div>
+                </div>
+              </section>
+              <section class="discussion-section">
+                <h4>Discussion Board</h4>
+                <form class="discussion-form" onsubmit="postDiscussion(event, 'Financial Planning Essentials')">
+                  <textarea placeholder="Share your thoughts..."></textarea>
+                  <button type="submit">Post</button>
+                </form>
+                <div class="discussion-list" id="discussions-financial-planning-essentials"></div>
+              </section>
+            </div>
+          </article>
+
+          <article class="course-card card" data-course="Motion Graphics with After Effects" data-duration="8" data-category="Design" data-level="Intermediate" tabindex="0">
+            <div class="card-img">
+              <img src="images/course_banners_motion_graphics.png" alt="Motion Graphics with After Effects">
+              <span class="tag">Intermediate</span>
+            </div>
+            <div class="card-content">
+              <header>
+                <h2>Motion Graphics with After Effects</h2>
+              </header>
+              <section>
+                <p><strong>Level:</strong> Intermediate</p>
+                <p><strong>Duration:</strong> 8 weeks</p>
+                <p><strong>Students:</strong> 900+</p>
+                <p><strong>Rating:</strong> 4.7</p>
+                <ul>
+                  <li>Keyframing and animation</li>
+                  <li>Text and shape layers</li>
+                  <li>Video editing basics</li>
+                </ul>
+                <div class="progress-tracker">
+                  <progress value="0" max="100"></progress>
+                  <span class="progress-percentage">0%</span>
+                  <div class="milestone-markers">
+                    <span class="milestone">25%</span>
+                    <span class="milestone">50%</span>
+                    <span class="milestone">75%</span>
+                    <span class="milestone">100%</span>
+                  </div>
+                  <p class="progress-details">Next: Lesson 1 - Introduction</p>
+                </div>
+                <div class="progress-stats">
+                  <h4>Progress Statistics</h4>
+                  <p class="lessons-completed">0/5</p>
+                  <p class="time-spent">0 mins</p>
+                  <p class="avg-quiz-score">0%</p>
+                </div>
+              </section>
+              <footer>
+                <div class="button-container">
+                  <button class="enroll-btn" onclick="enrollCourse('Motion Graphics with After Effects', this)">Enroll</button>
+                  <div class="post-enroll-buttons" style="display: none;">
+                    <button class="enrolled-btn" disabled>Enrolled</button>
+                    <button class="contents-btn" onclick="viewCourseContents('Motion Graphics with After Effects')">Course Contents</button>
+                  </div>
+                </div>
+              </footer>
+              <section class="project-section">
+                <h4>Course Project: Create a Short Animated Promo</h4>
+                <p><strong>Instructions:</strong> Use After Effects to create a 15-second animated promotional video for a fictional brand. Submit a URL to your video or a description.</p>
+                <form class="project-submission" onsubmit="submitProject(event, 'Motion Graphics with After Effects')">
+                  <label for="submission-motion-graphics">Your Submission:</label>
+                  <textarea id="submission-motion-graphics" name="submission" placeholder="Paste your video URL or description" required></textarea>
+                  <button type="submit">Submit Project</button>
+                </form>
+                <div class="submission-list" id="submissions-motion-graphics"></div>
+                <div class="peer-reviews">
+                  <h5>Peer Reviews</h5>
+                  <button onclick="viewPeerReviews('Motion Graphics with After Effects')">View Peer Submissions</button>
+                  <div class="peer-review-list" id="peer-reviews-motion-graphics"></div>
+                </div>
+              </section>
+              <section class="discussion-section">
+                <h4>Discussion Board</h4>
+                <form class="discussion-form" onsubmit="postDiscussion(event, 'Motion Graphics with After Effects')">
+                  <textarea placeholder="Share your thoughts..."></textarea>
+                  <button type="submit">Post</button>
+                </form>
+                <div class="discussion-list" id="discussions-motion-graphics-with-after-effects"></div>
+              </section>
+            </div>
+          </article>
         </section>
 
         <section class="gamification-section section">
@@ -1093,7 +673,7 @@
   </main>
 
   <footer class="site-footer">
-    <!-- Footer content unchanged -->
+      <a href="privacy.html">Privacy Policy</a>
   </footer>
 
   <div id="feedback-message" aria-live="polite"></div>
